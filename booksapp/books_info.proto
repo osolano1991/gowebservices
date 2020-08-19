@@ -1,0 +1,22 @@
+syntax = "proto3";
+package booksapp;
+
+service BookInfo {
+  rpc addBook(Book) returns (BookID);
+  rpc getBook(BookID) returns (Book);
+}
+
+message Book {
+  string Id = 1;
+  string Title = 2;
+  string Edition = 3;
+  string Copyright = 4;
+  string Language = 5;
+  string Pages = 6;
+  string Author = 7;
+  string Publisher = 8;
+}
+
+message BookID {
+  string value = 1;
+}
