@@ -1,6 +1,5 @@
 id,title,edition,copyright,language,pages,author,publisher
 1,Operating System Concepts,9th,2012,ENGLISH,976,Abraham Silberschatz,John Wiley & Sons
+2,Database System Concepts,6th,2010,ENGLISH,1376,Abraham Silberschatz,McGraw-Hill
 3,Computer Networks,5th,2010,ENGLISH,960,Andrew S. Tanenbaum,Pearson Education
-5,Fundamentals of Database Systems,7th,2013,ENGLISH,1280,Ramez Elmasri,Pearson Education
-6,Prueba Oscar,1th,2020,ESPAÑOL,1000,Oscar Solano Mora,Oscar Solano Mora
-4,MODIFICADO,1th,2020,ESPAÑOL,1000,Oscar Solano Mora,Oscar Solano Mora
+4,Modern Operating Systems,4th,2014,ENGLISH,1136,Andrew S. Tanenbaum,Pearson Education
