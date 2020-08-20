@@ -198,14 +198,20 @@ var file_books_info_proto_rawDesc = []byte{
 	0x09, 0x50, 0x75, 0x62, 0x6c, 0x69, 0x73, 0x68, 0x65, 0x72, 0x18, 0x08, 0x20, 0x01, 0x28, 0x09,
 	0x52, 0x09, 0x50, 0x75, 0x62, 0x6c, 0x69, 0x73, 0x68, 0x65, 0x72, 0x22, 0x1e, 0x0a, 0x06, 0x42,
 	0x6f, 0x6f, 0x6b, 0x49, 0x44, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x32, 0x64, 0x0a, 0x08, 0x42,
-	0x6f, 0x6f, 0x6b, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x2b, 0x0a, 0x07, 0x61, 0x64, 0x64, 0x42, 0x6f,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x32, 0xc6, 0x01, 0x0a, 0x08,
+	0x42, 0x6f, 0x6f, 0x6b, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x2b, 0x0a, 0x07, 0x61, 0x64, 0x64, 0x42,
+	0x6f, 0x6f, 0x6b, 0x12, 0x0e, 0x2e, 0x62, 0x6f, 0x6f, 0x6b, 0x73, 0x61, 0x70, 0x70, 0x2e, 0x42,
+	0x6f, 0x6f, 0x6b, 0x1a, 0x10, 0x2e, 0x62, 0x6f, 0x6f, 0x6b, 0x73, 0x61, 0x70, 0x70, 0x2e, 0x42,
+	0x6f, 0x6f, 0x6b, 0x49, 0x44, 0x12, 0x2b, 0x0a, 0x07, 0x67, 0x65, 0x74, 0x42, 0x6f, 0x6f, 0x6b,
+	0x12, 0x10, 0x2e, 0x62, 0x6f, 0x6f, 0x6b, 0x73, 0x61, 0x70, 0x70, 0x2e, 0x42, 0x6f, 0x6f, 0x6b,
+	0x49, 0x44, 0x1a, 0x0e, 0x2e, 0x62, 0x6f, 0x6f, 0x6b, 0x73, 0x61, 0x70, 0x70, 0x2e, 0x42, 0x6f,
+	0x6f, 0x6b, 0x12, 0x30, 0x0a, 0x0a, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x42, 0x6f, 0x6f, 0x6b,
+	0x12, 0x10, 0x2e, 0x62, 0x6f, 0x6f, 0x6b, 0x73, 0x61, 0x70, 0x70, 0x2e, 0x42, 0x6f, 0x6f, 0x6b,
+	0x49, 0x44, 0x1a, 0x10, 0x2e, 0x62, 0x6f, 0x6f, 0x6b, 0x73, 0x61, 0x70, 0x70, 0x2e, 0x42, 0x6f,
+	0x6f, 0x6b, 0x49, 0x44, 0x12, 0x2e, 0x0a, 0x0a, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x42, 0x6f,
 	0x6f, 0x6b, 0x12, 0x0e, 0x2e, 0x62, 0x6f, 0x6f, 0x6b, 0x73, 0x61, 0x70, 0x70, 0x2e, 0x42, 0x6f,
 	0x6f, 0x6b, 0x1a, 0x10, 0x2e, 0x62, 0x6f, 0x6f, 0x6b, 0x73, 0x61, 0x70, 0x70, 0x2e, 0x42, 0x6f,
-	0x6f, 0x6b, 0x49, 0x44, 0x12, 0x2b, 0x0a, 0x07, 0x67, 0x65, 0x74, 0x42, 0x6f, 0x6f, 0x6b, 0x12,
-	0x10, 0x2e, 0x62, 0x6f, 0x6f, 0x6b, 0x73, 0x61, 0x70, 0x70, 0x2e, 0x42, 0x6f, 0x6f, 0x6b, 0x49,
-	0x44, 0x1a, 0x0e, 0x2e, 0x62, 0x6f, 0x6f, 0x6b, 0x73, 0x61, 0x70, 0x70, 0x2e, 0x42, 0x6f, 0x6f,
-	0x6b, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6f, 0x6b, 0x49, 0x44, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -228,10 +234,14 @@ var file_books_info_proto_goTypes = []interface{}{
 var file_books_info_proto_depIdxs = []int32{
 	0, // 0: booksapp.BookInfo.addBook:input_type -> booksapp.Book
 	1, // 1: booksapp.BookInfo.getBook:input_type -> booksapp.BookID
-	1, // 2: booksapp.BookInfo.addBook:output_type -> booksapp.BookID
-	0, // 3: booksapp.BookInfo.getBook:output_type -> booksapp.Book
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
+	1, // 2: booksapp.BookInfo.deleteBook:input_type -> booksapp.BookID
+	0, // 3: booksapp.BookInfo.updateBook:input_type -> booksapp.Book
+	1, // 4: booksapp.BookInfo.addBook:output_type -> booksapp.BookID
+	0, // 5: booksapp.BookInfo.getBook:output_type -> booksapp.Book
+	1, // 6: booksapp.BookInfo.deleteBook:output_type -> booksapp.BookID
+	1, // 7: booksapp.BookInfo.updateBook:output_type -> booksapp.BookID
+	4, // [4:8] is the sub-list for method output_type
+	0, // [0:4] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -302,6 +312,8 @@ const _ = grpc.SupportPackageIsVersion6
 type BookInfoClient interface {
 	AddBook(ctx context.Context, in *Book, opts ...grpc.CallOption) (*BookID, error)
 	GetBook(ctx context.Context, in *BookID, opts ...grpc.CallOption) (*Book, error)
+	DeleteBook(ctx context.Context, in *BookID, opts ...grpc.CallOption) (*BookID, error)
+	UpdateBook(ctx context.Context, in *Book, opts ...grpc.CallOption) (*BookID, error)
 }
 
 type bookInfoClient struct {
@@ -330,10 +342,30 @@ func (c *bookInfoClient) GetBook(ctx context.Context, in *BookID, opts ...grpc.C
 	return out, nil
 }
 
+func (c *bookInfoClient) DeleteBook(ctx context.Context, in *BookID, opts ...grpc.CallOption) (*BookID, error) {
+	out := new(BookID)
+	err := c.cc.Invoke(ctx, "/booksapp.BookInfo/deleteBook", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *bookInfoClient) UpdateBook(ctx context.Context, in *Book, opts ...grpc.CallOption) (*BookID, error) {
+	out := new(BookID)
+	err := c.cc.Invoke(ctx, "/booksapp.BookInfo/updateBook", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // BookInfoServer is the server API for BookInfo service.
 type BookInfoServer interface {
 	AddBook(context.Context, *Book) (*BookID, error)
 	GetBook(context.Context, *BookID) (*Book, error)
+	DeleteBook(context.Context, *BookID) (*BookID, error)
+	UpdateBook(context.Context, *Book) (*BookID, error)
 }
 
 // UnimplementedBookInfoServer can be embedded to have forward compatible implementations.
@@ -345,6 +377,12 @@ func (*UnimplementedBookInfoServer) AddBook(context.Context, *Book) (*BookID, er
 }
 func (*UnimplementedBookInfoServer) GetBook(context.Context, *BookID) (*Book, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBook not implemented")
+}
+func (*UnimplementedBookInfoServer) DeleteBook(context.Context, *BookID) (*BookID, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteBook not implemented")
+}
+func (*UnimplementedBookInfoServer) UpdateBook(context.Context, *Book) (*BookID, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateBook not implemented")
 }
 
 func RegisterBookInfoServer(s *grpc.Server, srv BookInfoServer) {
@@ -387,6 +425,42 @@ func _BookInfo_GetBook_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
+func _BookInfo_DeleteBook_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BookID)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BookInfoServer).DeleteBook(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/booksapp.BookInfo/DeleteBook",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BookInfoServer).DeleteBook(ctx, req.(*BookID))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BookInfo_UpdateBook_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Book)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BookInfoServer).UpdateBook(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/booksapp.BookInfo/UpdateBook",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BookInfoServer).UpdateBook(ctx, req.(*Book))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _BookInfo_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "booksapp.BookInfo",
 	HandlerType: (*BookInfoServer)(nil),
@@ -398,6 +472,14 @@ var _BookInfo_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "getBook",
 			Handler:    _BookInfo_GetBook_Handler,
+		},
+		{
+			MethodName: "deleteBook",
+			Handler:    _BookInfo_DeleteBook_Handler,
+		},
+		{
+			MethodName: "updateBook",
+			Handler:    _BookInfo_UpdateBook_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
