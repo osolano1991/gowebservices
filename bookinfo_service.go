@@ -23,7 +23,6 @@ func (s *server) AddBook(ctx context.Context, in *pb.Book) (*pb.BookID, error) {
 		return nil, status.Errorf(codes.Internal,
 			"Error while generating Book ID", err)
 	}
-	//in.Id = out.String()
 	if s.bookMap == nil {
 		s.bookMap = make(map[string]*pb.Book)
 	}
