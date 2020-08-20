@@ -1,11 +1,12 @@
 package main
 
 import (
-	pb "github.com/osolano1991/gowebservices/booksapp"
-	"google.golang.org/grpc"
 	"log"
 	"net"
 	"os"
+
+	pb "github.com/osolano1991/gowebservices/booksapp"
+	"google.golang.org/grpc"
 )
 
 func main() {

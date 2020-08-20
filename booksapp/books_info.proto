@@ -1,9 +1,13 @@
 syntax = "proto3";
 package booksapp;
 
+//option go_package = "github.com/gowebservices/booksapp";
+
 service BookInfo {
   rpc addBook(Book) returns (BookID);
   rpc getBook(BookID) returns (Book);
+  rpc deleteBook(BookID) returns (BookID);
+  rpc updateBook(Book) returns (BookID);
 }
 
 message Book {
