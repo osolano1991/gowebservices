@@ -4,16 +4,13 @@ import (
 	"context"
 	"encoding/csv"
 	"fmt"
+	"log"
+	"os"
 
 	"github.com/gofrs/uuid"
 	pb "github.com/osolano1991/gowebservices/booksapp"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
-
-	//"encoding/json"
-	//"io"
-	"log"
-	"os"
 )
 
 type server struct {
@@ -21,7 +18,6 @@ type server struct {
 }
 
 func (s *server) AddBook(ctx context.Context, in *pb.Book) (*pb.BookID, error) {
-	//out, err := uuid.NewV4()
 	_, err := uuid.NewV4()
 	if err != nil {
 		return nil, status.Errorf(codes.Internal,
@@ -53,12 +49,6 @@ func (s *server) DeleteBook(ctx context.Context, in *pb.BookID) (*pb.BookID, err
 }
 
 func (s *server) UpdateBook(ctx context.Context, in *pb.Book) (*pb.BookID, error) {
-	// out, err := uuid.NewV4()
-	// if err != nil {
-	//     return nil, status.Errorf(codes.Internal,
-	//         "Error while generating Book ID", err)
-	// }
-	// in.Id = out.String()
 	if s.bookMap == nil {
 		s.bookMap = make(map[string]*pb.Book)
 	}
@@ -67,10 +57,8 @@ func (s *server) UpdateBook(ctx context.Context, in *pb.Book) (*pb.BookID, error
 }
 
 func (s *server) ReadCSV(ctx context.Context, in *pb.File) (*pb.BookID, error) {
-	// Leer archivo CSV
-	f, _ := os.Open(in.Value)
 
-	// Carga todos los resgistros del archivo en un slice/array
+	f, _ := os.Open(in.Value)
 	bookline, err := csv.NewReader(f).ReadAll()
 	if err != nil {
 		log.Fatal(err)
@@ -80,9 +68,10 @@ func (s *server) ReadCSV(ctx context.Context, in *pb.File) (*pb.BookID, error) {
 		s.bookMap = make(map[string]*pb.Book)
 	}
 
-	// Ciclo a traves de todos los registros, crear libro por cada uno
+	// Se recorren todos los registros
 	for _, book := range bookline {
-		fmt.Printf("\n\nCreando libro con ID: ", book[0])
+		fmt.Printf("\n\n======================================================================================")
+		fmt.Printf("\n\n1) Creando libro con ID -> ", book[0])
 		newBook, err := s.AddBook(ctx, &pb.Book{
 			Id:        book[0],
 			Title:     book[1],
@@ -94,15 +83,15 @@ func (s *server) ReadCSV(ctx context.Context, in *pb.File) (*pb.BookID, error) {
 			Publisher: book[7]})
 
 		if err != nil {
-			log.Fatalf("\n\n\nError al agregar el libro: %v", err)
+			log.Fatalf("\n\nError al agregar el libro: %v", err)
 		}
-		fmt.Printf("\n\n\nLibro agregado correctamente: ", newBook.String())
+		fmt.Printf("\n\tLibro agregado correctamente: ", newBook.String())
 
 		bookGet, err := s.GetBook(ctx, &pb.BookID{Value: book[0]})
 		if err != nil {
-			log.Printf("\n\n\nEl libro consultado no existe: %v", err)
+			fmt.Printf("\n\nEl libro consultado no existe: %v", err)
 		} else {
-			log.Printf("\n\n\nConsultando libro agregado:\n\n", bookGet.String())
+			fmt.Printf("\n\n2) Consultando libro agregado \n\t-> ", bookGet.String())
 		}
 	}
 
