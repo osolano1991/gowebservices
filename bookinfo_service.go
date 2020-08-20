@@ -82,7 +82,7 @@ func (s *server) ReadCSV(ctx context.Context, in *pb.File) (*pb.BookID, error) {
 
 	// Ciclo a traves de todos los registros, crear libro por cada uno
 	for _, book := range bookline {
-		fmt.Printf("\n\nLeyendo y creando libro con ID: ", book[0])
+		fmt.Printf("\n\nCreando libro con ID: ", book[0])
 		newBook, err := s.AddBook(ctx, &pb.Book{
 			Id:        book[0],
 			Title:     book[1],
@@ -94,9 +94,9 @@ func (s *server) ReadCSV(ctx context.Context, in *pb.File) (*pb.BookID, error) {
 			Publisher: book[7]})
 
 		if err != nil {
-			log.Fatalf("\n\n\nNo se pudo agregar el libro: %v", err)
+			log.Fatalf("\n\n\nError al agregar el libro: %v", err)
 		}
-		fmt.Printf("\n\n\nLibro agregado: ", newBook.String())
+		fmt.Printf("\n\n\nLibro agregado correctamente: ", newBook.String())
 
 		bookGet, err := s.GetBook(ctx, &pb.BookID{Value: book[0]})
 		if err != nil {

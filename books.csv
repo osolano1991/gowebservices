@@ -3,3 +3,4 @@ id,title,edition,copyright,language,pages,author,publisher
 2,Database System Concepts,6th,2010,ENGLISH,1376,Abraham Silberschatz,McGraw-Hill
 3,Computer Networks,5th,2010,ENGLISH,960,Andrew S. Tanenbaum,Pearson Education
 4,Modern Operating Systems,4th,2014,ENGLISH,1136,Andrew S. Tanenbaum,Pearson Education
+5,Go GRPC,1th,2020,SPANISH,1000,Oscar Solano Mora,Universidad Nacional

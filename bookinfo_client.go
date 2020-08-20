@@ -32,11 +32,11 @@ func main() {
 		Author:    "Abraham Silberschatz",
 		Publisher: "John Wiley & Sons"})
 	if err != nil {
-		log.Fatalf("\n\n\nNo se pudo agregar el libro: %v", err)
+		log.Fatalf("\n\n\nError al agregar el libro: %v", err)
 	}
 
 	// Obtener libro
-	log.Printf("\n\n\nLibro creado ID: %s", r.Value)
+	log.Printf("\n\n\nLibro consultado -> ID: %s", r.Value)
 	book, err := c.GetBook(ctx, &pb.BookID{Value: r.Value})
 	if err != nil {
 		log.Fatalf("\n\n\nEl libro consultado no existe: %v", err)
@@ -46,14 +46,13 @@ func main() {
 	// Eliminar libro
 	bookDel, err := c.DeleteBook(ctx, &pb.BookID{Value: r.Value})
 	if err != nil {
-		log.Fatalf("\n\n\nNo se pudo eliminar el libro: %v", err)
+		log.Fatalf("\n\n\nError al eliminar el libro: %v", err)
 	}
-	log.Printf("\n\n\nLibro eliminado: ", bookDel.String())
+	log.Printf("\n\n\nLibro eliminado correctamente: ", bookDel.String())
 
 	// Obtener libro nuevamente para comprobar si se elimino
 	bookGet, err := c.GetBook(ctx, &pb.BookID{Value: r.Value})
 	if err != nil {
-		//log.Fatalf("\n\nEl libro consultado no existe: %v", err)
 		log.Printf("\n\n\nEl libro consultado no existe: %v", err)
 	} else {
 		log.Printf("\n\n\nLibro consultado: ", bookGet.String())
@@ -70,7 +69,7 @@ func main() {
 		Author:    "Abraham Silberschatz",
 		Publisher: "John Wiley & Sons"})
 	if err != nil {
-		log.Fatalf("\n\n\nNo se pudo actualizar el libro: %v", err)
+		log.Fatalf("\n\n\nError al actualizar el libro: %v", err)
 	} else {
 		// Obtener libro nuevamente para comprobar si se actualizo
 		bookGetUpdated, err := c.GetBook(ctx, &pb.BookID{Value: upd.Value})
