@@ -79,4 +79,9 @@ func main() {
 		}
 		log.Printf("\n\n\nLibro actualizado correctamente: ", bookGetUpdated.String())
 	}
+
+	// Leer CSV
+	c.ReadCSV(ctx, &pb.File{Value: "books.csv"})
+	log.Printf("\n\n\nProcesando y creando libros desde archivo CSV")
+
 }

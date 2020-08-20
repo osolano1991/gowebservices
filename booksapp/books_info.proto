@@ -6,6 +6,7 @@ service BookInfo {
   rpc getBook(BookID) returns (Book);
   rpc deleteBook(BookID) returns (BookID);
   rpc updateBook(Book) returns (BookID);
+  rpc readCSV(File) returns (BookID);
 }
 
 message Book {
@@ -20,5 +21,9 @@ message Book {
 }
 
 message BookID {
+  string value = 1;
+}
+
+message File {
   string value = 1;
 }
